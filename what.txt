@@ -1,0 +1,11 @@
+ALGORITHM FOR NUMGUESSER:
+1. Euta random number generate garera save garne 
+2. User lai loop ma sodne number guess gar vanera
+3. Number thulo vo vane number thulo xa vandine 
+4. Sano vo vane sano xa vandine 
+5. tries dine 5-6 jati man lagxa 
+6. tries exceed vo vane lose
+7. number match vo vane win
+
+
+Tyo random number generate garnalai rand use garne

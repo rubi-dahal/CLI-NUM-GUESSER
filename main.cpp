@@ -5,8 +5,17 @@
 #include<limits>
 using namespace std;
 
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define CYAN "\033[36m"
+
 int main()
 {
+    cout<<endl;
+    cout<<RED<<"Welcome to number guessing game!"<<RESET<<endl;
+    cout<<endl;
+    cout<<CYAN<< "We have selected a number between 1 to 100. See if you can guess it in 5 turns or less. We will tell if the number is greater or less then the guessed number."<< RESET<<endl;
     // int magic_num = srand(time(0)) ;
     srand(time(0));
     int magic_num = rand() % 100 +1;
@@ -15,36 +24,36 @@ int main()
     do
     {
         int guess;
-        cout<<"ENTER THE NUMBER: ";
+        cout<<CYAN<<"ENTER THE NUMBER: "<<RESET<<endl;
 
         while(!(cin >>guess) || guess<0 || guess>100)
         {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout<<"Invalid input. Please enter a number between 1 and 100: ";
+            cout<<RED<<"Invalid input. Please enter a number between 1 and 100: ";
         }
 
         tries--;
 
         if(guess == magic_num && tries>0)
         {
-            cout<< "You Guessed the correct number!"<<endl; 
+            cout<< GREEN <<"You Guessed the correct number!"<<RESET<<endl; 
             break;
         }
         else if(tries==0)
         {
-            cout<<"Sorry You Lost! The number was: "<<magic_num <<endl;
+            cout<<RED<<"Sorry You Lost! The number was: "<<magic_num<<RESET <<endl;
             break;
         }
         else if(guess>magic_num){
-            cout<<"The magic number is less than "<<guess <<endl;
+            cout<<GREEN<<"The magic number is less than "<<guess <<RESET<<endl;
         }
         else if(guess<magic_num)
         {
-            cout<<"The magic number is greater than "<<guess<<endl;
+            cout<<GREEN<<"The magic number is greater than "<<guess<<RESET<<endl;
         }
         else{
-            cout<<"Some errors occured!";
+            cout<<RED<<"Some errors occured!";
             break;
         }
 
